@@ -14,7 +14,7 @@
                     <div class="col-8 d-flex flex-column">
                         <h5 class="card-title beer-title" title="{{ beer.title }}">{{ beer.title }}</h5>
                         <p class="card-text beer-description">{{ beer.text }}</p>
-                        <small class="text-muted mt-auto">Price: {{ beer.price }}</small>
+                        <small class="text-muted mt-auto">Price: {{ beer.price | currency:'MXN':'symbol':'1.2-2' }}</small>
                     </div>
                 </div>
             </div>

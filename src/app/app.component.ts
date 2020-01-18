@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
         <h1>{{ title }}</h1>
         <p class="lead">Look you favorite beer</p>
     </div>
+    <beer-search></beer-search>
     <fav-beer></fav-beer>
     <beer-list></beer-list>`
 })
