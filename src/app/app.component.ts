@@ -7,10 +7,18 @@ import { Component } from '@angular/core';
         <h1>{{ title }}</h1>
         <p class="lead">Look you favorite beer</p>
     </div>
-    <beer-search></beer-search>
+    <beer-search (filterEvent)="onFilterEvent($event)"></beer-search>
     <fav-beer></fav-beer>
-    <beer-list></beer-list>`
+    <beer-list [filterByOnBeerList]="filterByOnApp"></beer-list>`
 })
 export class AppComponent {
+
     title: string = 'We love beer';
+
+    filterByOnApp: string;
+
+    onFilterEvent( filterByFromBeerSearch: string ){
+        console.log( `Recibiendo en AppComponent '${ filterByFromBeerSearch }'...` );
+        this.filterByOnApp = filterByFromBeerSearch;
+    }
 }

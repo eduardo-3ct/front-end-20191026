@@ -13,7 +13,7 @@ export class FavBeerComponent {
     imgWidth: number = 102;
 
     togglePromotion: boolean = true;
-    toggleImage( event ){
+    toggleImage( event ): void {
         //console.log( event );
         this.togglePromotion = !this.togglePromotion;
     }
