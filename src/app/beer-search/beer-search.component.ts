@@ -21,7 +21,7 @@ export class BeerSearchComponent {
     }
 
     public set filterBy(value: string) {
-        console.log( "SET" );
+        //console.log( "SET" );
         this._filterBy = value;
         this.emitFilterEvent();
     }
