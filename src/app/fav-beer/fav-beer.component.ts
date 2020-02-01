@@ -3,7 +3,6 @@ import { Beer } from '../beer';
 import { BeerService } from '../beer.service';
 
 @Component({
-    selector: 'fav-beer',
     styleUrls: ['./fav-beer.component.css'],
     templateUrl: './fav-beer.component.html'
 })
@@ -25,7 +24,7 @@ export class FavBeerComponent implements OnInit {
         this.beerService.find().subscribe({
             next: beers => {
                 this.favBeer = beers[0];
-                console.log( this.favBeer );
+                // console.log( this.favBeer );
             },
             error: message => alert( message )
         });
