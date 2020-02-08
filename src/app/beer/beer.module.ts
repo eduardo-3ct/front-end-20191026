@@ -7,6 +7,7 @@ import { BeerDetailComponent } from './beer-detail/beer-detail.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { BeerDetailGuard } from './beer-detail/beer-detail.guard';
+import { SharedModule } from '../shared/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,11 @@ import { BeerDetailGuard } from './beer-detail/beer-detail.guard';
     BeerDetailComponent
   ],
   imports: [
-    CommonModule,
-    FormsModule,
     RouterModule.forChild([
       { path: 'beers', component: BeerSearchComponent },
       { path: 'beers/:id', component: BeerDetailComponent, canActivate: [ BeerDetailGuard ] }
-    ])
+    ]),
+    SharedModule
   ]
 })
 export class BeerModule { }

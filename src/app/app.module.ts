@@ -4,26 +4,23 @@ import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FavBeerComponent } from './beer/fav-beer/fav-beer.component';
-import { RouterModule } from '@angular/router';
 import { BeerModule } from './beer/beer.module';
+import { SharedModule } from './shared/shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
+    AuthModule,
     BeerModule,
+    AppRoutingModule,
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      { path: 'home', component: FavBeerComponent },
-      { path: '', redirectTo: '/home', pathMatch: 'full' },
-      { path: '**', redirectTo: '/home', pathMatch: 'full' },
-    ])
+    SharedModule
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
